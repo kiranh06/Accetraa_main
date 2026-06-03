@@ -1,0 +1,96 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $navbar-height;
+  background-color: $color-white;
+  border-bottom: 1px solid $border-color;
+  z-index: $z-navbar;
+}
+
+.nav {
+  @include container;
+  @include flex-between;
+  height: 100%;
+}
+
+.logo {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  letter-spacing: -0.02em;
+}
+
+.navLinks {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: $navbar-height;
+  left: 0;
+  right: 0;
+  background-color: $color-white;
+  border-bottom: 1px solid $border-color;
+  padding: $space-4 $container-padding;
+  gap: $space-1;
+
+  @include respond-to('lg') {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: none;
+    border: none;
+    padding: 0;
+    gap: $space-2;
+  }
+}
+
+.navLinksOpen {
+  display: flex;
+}
+
+.navLink {
+  display: block;
+  padding: $space-3 $space-4;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-neutral-700;
+  border-radius: $radius-md;
+  transition: color $transition-fast, background-color $transition-fast;
+
+  &:hover {
+    color: $color-primary;
+    background-color: $color-neutral-100;
+  }
+}
+
+.navLinkActive {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: $space-2;
+
+  @include respond-to('lg') {
+    display: none;
+  }
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: $color-neutral-800;
+  border-radius: $radius-full;
+  transition: transform $transition-base, opacity $transition-base;
+}

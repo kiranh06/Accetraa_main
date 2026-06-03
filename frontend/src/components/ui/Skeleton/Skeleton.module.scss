@@ -1,0 +1,23 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.skeleton {
+  @include skeleton-shimmer;
+  display: block;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-4;
+  border-radius: $radius-lg;
+  background: $color-white;
+  border: 1px solid $border-color;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}

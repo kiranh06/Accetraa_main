@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+}
+
+.section--alt {
+  @include section-padding;
+  background-color: $color-neutral-100;
+}

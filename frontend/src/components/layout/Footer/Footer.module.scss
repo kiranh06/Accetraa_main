@@ -1,0 +1,69 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.footer {
+  background-color: $color-neutral-900;
+  color: $color-neutral-200;
+  padding-top: $space-12;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+  padding-bottom: $space-10;
+  border-bottom: 1px solid $color-neutral-700;
+
+  @include respond-to('md') {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.logo {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+}
+
+.tagline {
+  font-size: $font-size-sm;
+  color: $color-neutral-400;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2 $space-6;
+}
+
+.link {
+  font-size: $font-size-sm;
+  color: $color-neutral-400;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.bottom {
+  padding-block: $space-5;
+}
+
+.copy {
+  font-size: $font-size-xs;
+  color: $color-neutral-400;
+  text-align: center;
+
+  @include respond-to('md') {
+    text-align: left;
+  }
+}

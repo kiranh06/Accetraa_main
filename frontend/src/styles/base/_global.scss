@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+
+:root {
+  --navbar-height: #{$navbar-height};
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-top: $navbar-height;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-inline: auto;
+  padding-inline: $container-padding;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

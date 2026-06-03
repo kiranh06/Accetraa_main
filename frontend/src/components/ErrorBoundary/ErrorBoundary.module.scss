@@ -1,0 +1,38 @@
+@use '@/styles/abstracts/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: $space-8;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  color: $color-neutral-900;
+  margin-bottom: $space-4;
+}
+
+.message {
+  font-size: $font-size-base;
+  color: $color-neutral-400;
+  margin-bottom: $space-8;
+  max-width: 480px;
+}
+
+.button {
+  padding: $space-3 $space-8;
+  background-color: $color-primary;
+  color: $color-white;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  transition: background-color $transition-base;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
