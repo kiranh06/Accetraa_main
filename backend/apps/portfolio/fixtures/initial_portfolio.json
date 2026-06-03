@@ -1,0 +1,198 @@
+[
+  {
+    "model": "portfolio.portfoliocategory",
+    "pk": 1,
+    "fields": {
+      "name": "Web Projects",
+      "slug": "web-projects",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "portfolio.portfoliocategory",
+    "pk": 2,
+    "fields": {
+      "name": "Mobile Applications",
+      "slug": "mobile-applications",
+      "sort_order": 2
+    }
+  },
+  {
+    "model": "portfolio.portfoliocategory",
+    "pk": 3,
+    "fields": {
+      "name": "AI Projects",
+      "slug": "ai-projects",
+      "sort_order": 3
+    }
+  },
+  {
+    "model": "portfolio.portfoliocategory",
+    "pk": 4,
+    "fields": {
+      "name": "Enterprise Solutions",
+      "slug": "enterprise-solutions",
+      "sort_order": 4
+    }
+  },
+  {
+    "model": "portfolio.portfolioitem",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "title": "E-Commerce Platform Modernisation",
+      "slug": "ecommerce-platform-modernisation",
+      "client_name": null,
+      "short_description": "Migrated a high-traffic retail store from a legacy PHP monolith to a modern React and Django stack, cutting page load times by 60%.",
+      "description": "The client operated a growing e-commerce store built on an aging PHP codebase that had become difficult to maintain and scale. Accetraa Technologies led a full modernisation: a React SPA for the storefront, a Django REST API for the backend, and MySQL on AWS RDS. The new system handled 3x the previous peak traffic without performance degradation.",
+      "thumbnail": "",
+      "technologies": "React, Django, MySQL, AWS, Redis",
+      "project_url": null,
+      "is_featured": true,
+      "sort_order": 1,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "portfolio.portfolioitem",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "title": "Real Estate Listing Portal",
+      "slug": "real-estate-listing-portal",
+      "client_name": null,
+      "short_description": "A full-featured property listing platform with advanced search, map integration, agent dashboards, and lead capture for a regional real estate group.",
+      "description": "Built a multi-tenant property portal with role-based dashboards for agents, branch managers, and administrators. Features include advanced property search with map view, enquiry management, and automated email notifications. The platform launched with 500+ listings and onboarded 30 agents at go-live.",
+      "thumbnail": "",
+      "technologies": "Next.js, Django REST Framework, PostgreSQL, Google Maps API",
+      "project_url": null,
+      "is_featured": true,
+      "sort_order": 2,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "portfolio.portfolioitem",
+    "pk": 3,
+    "fields": {
+      "category": 2,
+      "title": "Salon Booking Mobile App",
+      "slug": "salon-booking-mobile-app",
+      "client_name": null,
+      "short_description": "A cross-platform mobile application for customers to browse services, book appointments, receive reminders, and pay in-app — integrated with the UrSaloon platform.",
+      "description": "Designed and developed the customer-facing mobile application for the UrSaloon ecosystem. Built with React Native for iOS and Android from a single codebase. Key features: service catalogue browsing, real-time slot availability, push notifications for reminders, in-app payments via Razorpay, and loyalty points tracking.",
+      "thumbnail": "",
+      "technologies": "React Native, Django REST Framework, Razorpay, Firebase",
+      "project_url": null,
+      "is_featured": true,
+      "sort_order": 1,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "portfolio.portfolioitem",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "title": "Field Sales Tracking App",
+      "slug": "field-sales-tracking-app",
+      "client_name": null,
+      "short_description": "A GPS-enabled mobile app for tracking field sales representatives, logging customer visits, managing leads, and generating territory performance reports.",
+      "description": "Developed a Flutter-based field sales management app used by a FMCG distributor with 200+ field agents. Agents log customer visits with geo-tagged check-ins, record orders and feedback, and sync data offline. Managers view real-time dashboards showing visit heatmaps, sales pipelines, and agent productivity metrics.",
+      "thumbnail": "",
+      "technologies": "Flutter, Django, MySQL, Google Maps, AWS S3",
+      "project_url": null,
+      "is_featured": false,
+      "sort_order": 2,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "portfolio.portfolioitem",
+    "pk": 5,
+    "fields": {
+      "category": 3,
+      "title": "Demand Forecasting Engine",
+      "slug": "demand-forecasting-engine",
+      "client_name": null,
+      "short_description": "An ML-powered forecasting system predicting 90-day product demand for a retail chain, reducing overstock by 35% and stockouts by 28%.",
+      "description": "Built a machine learning forecasting pipeline for a retail chain with 80 SKUs and 15 store locations. The system processes historical sales data, promotional calendars, and seasonal patterns using an XGBoost ensemble model. Predictions are surfaced via a Django REST API integrated into the client's existing ERP. Deployed on AWS SageMaker.",
+      "thumbnail": "",
+      "technologies": "Python, XGBoost, AWS SageMaker, Django REST Framework, MySQL",
+      "project_url": null,
+      "is_featured": true,
+      "sort_order": 1,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "portfolio.portfolioitem",
+    "pk": 6,
+    "fields": {
+      "category": 3,
+      "title": "Customer Support AI Chatbot",
+      "slug": "customer-support-ai-chatbot",
+      "client_name": null,
+      "short_description": "A context-aware AI chatbot trained on product documentation and FAQs, resolving 70% of support tickets without human intervention for a SaaS company.",
+      "description": "Designed and deployed a conversational AI chatbot for a B2B SaaS company's customer support team. The chatbot is powered by a fine-tuned language model with retrieval-augmented generation (RAG) over the client's knowledge base. It integrates with Zendesk for ticket escalation and CRM for account-aware responses. The system handles 500+ conversations per day.",
+      "thumbnail": "",
+      "technologies": "Python, LangChain, OpenAI API, Pinecone, Django, Zendesk API",
+      "project_url": null,
+      "is_featured": false,
+      "sort_order": 2,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "portfolio.portfolioitem",
+    "pk": 7,
+    "fields": {
+      "category": 4,
+      "title": "HR & Payroll Management System",
+      "slug": "hr-payroll-management-system",
+      "client_name": null,
+      "short_description": "An end-to-end HRMS covering employee lifecycle, attendance, payroll processing, and statutory compliance for a manufacturing company with 1,200 employees.",
+      "description": "Delivered a bespoke HRMS for a mid-sized manufacturing enterprise. The system manages the complete employee lifecycle from onboarding to separation, biometric attendance integration, automated payroll with PF/ESI/TDS calculations, and a self-service employee portal for leave applications and payslip access. Built on Django with a React frontend.",
+      "thumbnail": "",
+      "technologies": "React, Django, MySQL, Celery, AWS EC2, Biometric SDK",
+      "project_url": null,
+      "is_featured": true,
+      "sort_order": 1,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "portfolio.portfolioitem",
+    "pk": 8,
+    "fields": {
+      "category": 4,
+      "title": "Logistics & Fleet Management Platform",
+      "slug": "logistics-fleet-management-platform",
+      "client_name": null,
+      "short_description": "A real-time fleet tracking and logistics platform coordinating 300+ vehicles, optimising delivery routes, and automating proof-of-delivery.",
+      "description": "Built a web-based logistics platform for a regional courier company managing 300 vehicles across 5 cities. The platform provides real-time GPS tracking via IoT device integration, automated route optimisation using Google OR-Tools, a driver mobile app for delivery confirmation, and executive dashboards for KPI monitoring. Processes 2,000+ deliveries per day.",
+      "thumbnail": "",
+      "technologies": "React, Django, MySQL, Google OR-Tools, WebSockets, AWS IoT",
+      "project_url": null,
+      "is_featured": false,
+      "sort_order": 2,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  }
+]

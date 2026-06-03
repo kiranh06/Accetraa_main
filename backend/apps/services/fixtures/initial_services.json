@@ -1,0 +1,122 @@
+[
+  {
+    "model": "services.service",
+    "pk": 1,
+    "fields": {
+      "name": "AI & Data Solutions",
+      "slug": "ai-data-solutions",
+      "short_description": "Build intelligent systems with machine learning, data engineering, and AI-driven automation tailored to your business.",
+      "description": null,
+      "icon": "icon-ai.svg",
+      "sort_order": 1,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "services.service",
+    "pk": 2,
+    "fields": {
+      "name": "Software Development",
+      "slug": "software-development",
+      "short_description": "Custom web and enterprise software engineered for performance, scalability, and long-term maintainability.",
+      "description": null,
+      "icon": "icon-code.svg",
+      "sort_order": 2,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "services.service",
+    "pk": 3,
+    "fields": {
+      "name": "Mobile App Development",
+      "slug": "mobile-app-development",
+      "short_description": "Native and cross-platform mobile applications for iOS and Android with exceptional user experience.",
+      "description": null,
+      "icon": "icon-mobile.svg",
+      "sort_order": 3,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "services.service",
+    "pk": 4,
+    "fields": {
+      "name": "Cloud Services",
+      "slug": "cloud-services",
+      "short_description": "Cloud architecture, migration, and managed services on AWS, Azure, and GCP for secure, elastic infrastructure.",
+      "description": null,
+      "icon": "icon-cloud.svg",
+      "sort_order": 4,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "services.service",
+    "pk": 5,
+    "fields": {
+      "name": "Cybersecurity",
+      "slug": "cybersecurity",
+      "short_description": "Protect your business with vulnerability assessments, penetration testing, and end-to-end security strategy.",
+      "description": null,
+      "icon": "icon-shield.svg",
+      "sort_order": 5,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "services.service",
+    "pk": 6,
+    "fields": {
+      "name": "Digital Transformation",
+      "slug": "digital-transformation",
+      "short_description": "Modernise processes, systems, and culture to compete in the digital-first economy.",
+      "description": null,
+      "icon": "icon-transform.svg",
+      "sort_order": 6,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "services.service",
+    "pk": 7,
+    "fields": {
+      "name": "HR & Recruitment Services",
+      "slug": "hr-recruitment-services",
+      "short_description": "End-to-end talent acquisition, HR consulting, and workforce management to build high-performing teams.",
+      "description": null,
+      "icon": "icon-people.svg",
+      "sort_order": 7,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "services.service",
+    "pk": 8,
+    "fields": {
+      "name": "Startup Consulting",
+      "slug": "startup-consulting",
+      "short_description": "From idea to launch — technology strategy, MVP development, and growth consulting for early-stage startups.",
+      "description": null,
+      "icon": "icon-rocket.svg",
+      "sort_order": 8,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  }
+]

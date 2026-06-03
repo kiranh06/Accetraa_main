@@ -1,0 +1,28 @@
+# ── Core ─────────────────────────────────────────────────
+Django==5.0.6
+djangorestframework==3.15.2
+
+# ── Authentication ────────────────────────────────────────
+# djangorestframework-simplejwt  ← PHASE 2: Required when React Admin Panel is built.
+#                                   Re-add: djangorestframework-simplejwt==5.3.1
+#                                   Then uncomment SIMPLE_JWT in settings/base.py
+#                                   and JWT endpoints in accetraa/urls.py
+
+# ── CORS ─────────────────────────────────────────────────
+django-cors-headers==4.3.1
+
+# ── Database ─────────────────────────────────────────────
+PyMySQL==1.2.0
+
+# ── Environment / Configuration ───────────────────────────
+python-decouple==3.8
+
+# ── Image handling ────────────────────────────────────────
+Pillow==11.3.0
+
+# ── Production: Email via AWS SES ────────────────────────
+django-ses==3.5.2
+
+# ── Production: File storage via AWS S3 ──────────────────
+django-storages==1.14.3
+boto3==1.34.131

@@ -1,0 +1,47 @@
+# =============================================================================
+# Accetraa Technologies — .gitattributes
+# Normalise line endings: LF in the repository, platform-native on checkout.
+# Eliminates LF→CRLF warnings on Windows and ensures macOS/Linux consistency.
+# =============================================================================
+
+# Default: normalise all text files to LF in the repository
+* text=auto eol=lf
+
+# Explicitly text (always LF in repo, CRLF on Windows checkout)
+*.py        text eol=lf
+*.html      text eol=lf
+*.css       text eol=lf
+*.js        text eol=lf
+*.jsx       text eol=lf
+*.ts        text eol=lf
+*.tsx       text eol=lf
+*.json      text eol=lf
+*.md        text eol=lf
+*.txt       text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.toml      text eol=lf
+*.cfg       text eol=lf
+*.ini       text eol=lf
+*.env       text eol=lf
+*.example   text eol=lf
+*.sh        text eol=lf
+Makefile    text eol=lf
+Dockerfile  text eol=lf
+
+# Binary — never mangle
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.svg       binary
+*.woff      binary
+*.woff2     binary
+*.ttf       binary
+*.eot       binary
+*.pdf       binary
+*.docx      binary
+*.xlsx      binary
+*.zip       binary
+*.tar.gz    binary

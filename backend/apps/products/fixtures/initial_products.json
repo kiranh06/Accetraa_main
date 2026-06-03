@@ -1,0 +1,104 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "UrSaloon",
+      "slug": "ursaloon",
+      "tagline": "Complete Salon Management Platform",
+      "short_description": "All-in-one solution for appointments, billing, staff management, inventory, and customer loyalty — built for single salons and multi-branch chains.",
+      "description": null,
+      "thumbnail": "",
+      "is_featured": true,
+      "sort_order": 1,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "BPO Platform",
+      "slug": "bpo",
+      "tagline": "Intelligent Business Process Outsourcing",
+      "short_description": "Streamline your outsourced operations with automated workflows, real-time tracking, quality monitoring, and SLA dashboards built for BPO teams.",
+      "description": null,
+      "thumbnail": "",
+      "is_featured": true,
+      "sort_order": 2,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "HRMS",
+      "slug": "hrms",
+      "tagline": "Human Resource Management System",
+      "short_description": "End-to-end HR management — employee records, payroll, attendance, leave, performance reviews, and compliance reporting in a single platform.",
+      "description": null,
+      "thumbnail": "",
+      "is_featured": true,
+      "sort_order": 3,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "ERP",
+      "slug": "erp",
+      "tagline": "Enterprise Resource Planning",
+      "short_description": "Integrate finance, procurement, inventory, manufacturing, and sales into a unified ERP system tailored to your business processes.",
+      "description": null,
+      "thumbnail": "",
+      "is_featured": false,
+      "sort_order": 4,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "AI Chatbot",
+      "slug": "ai-chatbot",
+      "tagline": "Intelligent Conversational AI for Your Business",
+      "short_description": "Deploy a custom AI-powered chatbot trained on your business data — handles customer support, lead qualification, FAQs, and appointment booking 24/7.",
+      "description": null,
+      "thumbnail": "",
+      "is_featured": false,
+      "sort_order": 5,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Recruitment Management System",
+      "slug": "recruitment-management-system",
+      "tagline": "End-to-End Recruitment Automation",
+      "short_description": "Manage the full recruitment lifecycle — job postings, applicant tracking, interview scheduling, offer management, and onboarding in one platform.",
+      "description": null,
+      "thumbnail": "",
+      "is_featured": false,
+      "sort_order": 6,
+      "is_active": true,
+      "created_at": "2026-06-03T00:00:00Z",
+      "updated_at": "2026-06-03T00:00:00Z"
+    }
+  }
+]
