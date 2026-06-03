@@ -1,0 +1,49 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface;
+}
+
+.header {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $space-6;
+  margin-bottom: $space-10;
+  align-items: flex-end;
+}
+
+.headerAction { flex-shrink: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include respond-to('md') { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to('lg') { grid-template-columns: repeat(3, 1fr); }
+}
+
+.stateBox {
+  text-align: center;
+  padding: $space-12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+  color: $color-neutral-500;
+}
+
+.devError {
+  font-family: $font-mono;
+  font-size: $font-size-xs;
+  color: $color-error;
+  background: $color-error-subtle;
+  border: 1px solid rgba($color-error, 0.2);
+  border-radius: $radius-md;
+  padding: $space-3 $space-4;
+  max-width: 480px;
+  word-break: break-word;
+  text-align: left;
+}

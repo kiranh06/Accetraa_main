@@ -1,0 +1,104 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface;
+}
+
+.top { margin-bottom: $space-12; }
+
+// ─── Metrics ──────────────────────────────────────────────────────────────────
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background-color: $border-color;
+  border: 1px solid $border-color;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  margin-bottom: $space-16;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metric {
+  background-color: $color-surface;
+  padding: $space-8 $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  transition: background-color $transition-fast;
+
+  &:hover { background-color: $color-primary-subtle; }
+}
+
+.metricValue {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  letter-spacing: $tracking-tight;
+  line-height: 1;
+}
+
+.metricLabel {
+  font-size: $font-size-sm;
+  color: $color-neutral-500;
+  font-weight: $font-weight-medium;
+}
+
+// ─── Differentiators ──────────────────────────────────────────────────────────
+
+.differentiators {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid $border-color;
+}
+
+.diff {
+  display: flex;
+  gap: $space-6;
+  padding: $space-8 0;
+  border-bottom: 1px solid $border-color;
+  align-items: flex-start;
+
+  @include respond-to('md') {
+    gap: $space-10;
+  }
+}
+
+.diffNumber {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  letter-spacing: $tracking-widest;
+  flex-shrink: 0;
+  padding-top: $space-1;
+  min-width: 28px;
+}
+
+.diffContent {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.diffTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-neutral-900;
+  letter-spacing: $tracking-tight;
+  margin: 0;
+}
+
+.diffBody {
+  font-size: $font-size-base;
+  color: $color-neutral-500;
+  line-height: $line-height-relaxed;
+  margin: 0;
+  max-width: 620px;
+}

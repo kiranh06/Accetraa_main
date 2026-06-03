@@ -1,6 +1,8 @@
 import axiosInstance from './axiosInstance';
 
-export const getPortfolio = async () => {
-  const response = await axiosInstance.get('/api/v1/portfolio/');
+export const getPortfolio = async (params = {}) => {
+  const response = await axiosInstance.get('/api/v1/portfolio/', { params });
   return response.data;
 };
+
+export const getPortfolioFeatured = () => getPortfolio({ featured: true });

@@ -1,0 +1,90 @@
+@use 'abstracts/variables' as *;
+
+.card {
+  background: $color-surface;
+  border: 1px solid $border-color;
+  border-radius: $radius-xl;
+  padding: $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  position: relative;
+
+  // Decorative opening quote
+  &::before {
+    content: '\201C';
+    position: absolute;
+    top: $space-4;
+    right: $space-6;
+    font-size: 6rem;
+    line-height: 1;
+    color: $color-primary-subtle;
+    font-family: Georgia, serif;
+    pointer-events: none;
+  }
+}
+
+// ─── Stars ────────────────────────────────────────────────────────────────────
+
+.stars {
+  display: flex;
+  gap: $space-1;
+  color: #F59E0B; // amber — standard star rating colour across all themes
+}
+
+// ─── Quote ────────────────────────────────────────────────────────────────────
+
+.blockquote { margin: 0; }
+
+.quote {
+  font-size: $font-size-base;
+  color: $color-neutral-700;
+  line-height: $line-height-relaxed;
+  font-style: italic;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+// ─── Author ───────────────────────────────────────────────────────────────────
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  margin-top: auto;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: $radius-full;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-white;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.meta { display: flex; flex-direction: column; gap: 2px; }
+
+.author {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-neutral-900;
+  font-style: normal;
+}
+
+.role {
+  font-size: $font-size-xs;
+  color: $color-neutral-500;
+  margin: 0;
+
+  strong {
+    font-weight: $font-weight-medium;
+    color: $color-neutral-600;
+  }
+}

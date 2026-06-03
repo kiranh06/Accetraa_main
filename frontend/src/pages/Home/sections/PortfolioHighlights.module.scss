@@ -1,0 +1,71 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-neutral-950;
+  background-image: radial-gradient(
+    ellipse 60% 80% at 30% 60%,
+    rgba($color-primary, 0.12) 0%,
+    transparent 70%
+  );
+}
+
+.header {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $space-6;
+  margin-bottom: $space-10;
+  align-items: flex-end;
+}
+
+.headerAction { flex-shrink: 0; }
+
+// Outline button override for dark background
+.outlineLight {
+  border-color: rgba($color-white, 0.4) !important;
+  color: $color-white !important;
+
+  &:hover {
+    background-color: rgba($color-white, 0.08) !important;
+    border-color: rgba($color-white, 0.7) !important;
+    box-shadow: none !important;
+  }
+}
+
+.ghostLight {
+  color: rgba($color-white, 0.70) !important;
+  &:hover { background-color: rgba($color-white, 0.08) !important; color: $color-white !important; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include respond-to('md') { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to('lg') { grid-template-columns: repeat(3, 1fr); }
+}
+
+.stateBox {
+  text-align: center;
+  padding: $space-12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+  color: rgba($color-white, 0.50);
+}
+
+.devError {
+  font-family: $font-mono;
+  font-size: $font-size-xs;
+  color: #FCA5A5; // light red readable on dark background
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: $radius-md;
+  padding: $space-3 $space-4;
+  max-width: 480px;
+  word-break: break-word;
+  text-align: left;
+}

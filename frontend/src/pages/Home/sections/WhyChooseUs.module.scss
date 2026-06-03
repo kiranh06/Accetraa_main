@@ -1,0 +1,67 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface;
+}
+
+.sectionHeader { margin-bottom: $space-12; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include respond-to('md') { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to('xl') { grid-template-columns: repeat(4, 1fr); }
+}
+
+.card {
+  padding: $space-8;
+  border: 1px solid $border-color;
+  border-radius: $radius-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  transition: box-shadow $transition-base, transform $transition-base, border-color $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+    transform: translateY(-2px);
+    border-color: $color-primary-subtle;
+
+    .iconWrap {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: $color-primary-subtle;
+  border-radius: $radius-lg;
+  color: $color-primary;
+  flex-shrink: 0;
+  transition: background-color $transition-fast, color $transition-fast;
+}
+
+.cardTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-neutral-900;
+  letter-spacing: $tracking-tight;
+  margin: 0;
+}
+
+.cardBody {
+  font-size: $font-size-sm;
+  color: $color-neutral-500;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
