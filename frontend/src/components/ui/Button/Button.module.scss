@@ -1,0 +1,161 @@
+@use 'sass:color';
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+
+.btn {
+  @include flex-center;
+  gap: $space-2;
+  position: relative;
+  display: inline-flex;
+  border: $border-width-lg solid transparent;
+  border-radius: $radius-md;
+  font-family: $font-primary;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-wide;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition:
+    background-color $transition-fast,
+    border-color $transition-fast,
+    color $transition-fast,
+    box-shadow $transition-fast,
+    transform $transition-fast;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+}
+
+// ─── Variants ─────────────────────────────────────────────────────────────────
+
+.btn--primary {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: $color-white;
+
+  &:hover:not(:disabled):not(.btn--loading) {
+    background-color: $color-primary-dark;
+    border-color: $color-primary-dark;
+    box-shadow: $shadow-primary;
+  }
+
+  &:active:not(:disabled) {
+    background-color: color.adjust($color-primary-dark, $lightness: -4%);
+  }
+}
+
+.btn--secondary {
+  background-color: $color-neutral-900;
+  border-color: $color-neutral-900;
+  color: $color-white;
+
+  &:hover:not(:disabled):not(.btn--loading) {
+    background-color: $color-neutral-800;
+    border-color: $color-neutral-800;
+    box-shadow: $shadow-md;
+  }
+}
+
+.btn--outline {
+  background-color: transparent;
+  border-color: $color-primary;
+  color: $color-primary;
+
+  &:hover:not(:disabled):not(.btn--loading) {
+    background-color: $color-primary-subtle;
+    box-shadow: $shadow-primary;
+  }
+}
+
+.btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: $color-primary;
+
+  &:hover:not(:disabled):not(.btn--loading) {
+    background-color: $color-primary-subtle;
+  }
+}
+
+.btn--accent {
+  background-color: $color-accent;
+  border-color: $color-accent;
+  color: $color-neutral-900; // #0C1120 on #FF4D00 — 5.92:1 ✓
+
+  &:hover:not(:disabled):not(.btn--loading) {
+    background-color: $color-accent-dark;
+    border-color: $color-accent-dark;
+    box-shadow: $shadow-accent;
+    // #0C1120 on #D94000 — 4.53:1 ✓ (just above AA threshold)
+  }
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.btn--sm {
+  padding: $space-2 $space-5;
+  font-size: $font-size-sm;
+  min-height: 44px; // WCAG 2.5.5 minimum touch target
+}
+
+.btn--md {
+  padding: $space-3 $space-6;
+  font-size: $font-size-base;
+  min-height: 44px; // WCAG 2.5.5 minimum touch target
+}
+
+.btn--lg {
+  padding: $space-4 $space-8;
+  font-size: $font-size-lg;
+  min-height: 48px;
+}
+
+// ─── Modifiers ────────────────────────────────────────────────────────────────
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+// ─── States ───────────────────────────────────────────────────────────────────
+
+.btn:disabled,
+.btn--loading {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn--loading {
+  pointer-events: none;
+}
+
+// ─── Loading Spinner ──────────────────────────────────────────────────────────
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: $radius-full;
+  animation: btn-spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+}

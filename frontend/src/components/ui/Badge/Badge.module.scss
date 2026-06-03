@@ -1,0 +1,72 @@
+@use 'abstracts/variables' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  font-family: $font-primary;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  border-radius: $radius-full;
+  white-space: nowrap;
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.badge--sm {
+  padding: 2px $space-2;
+  font-size: $font-size-xs;
+}
+
+.badge--md {
+  padding: $space-1 $space-3;
+  font-size: $font-size-xs;
+}
+
+.badge--lg {
+  padding: $space-2 $space-4;
+  font-size: $font-size-sm;
+}
+
+// ─── Variants ─────────────────────────────────────────────────────────────────
+
+.badge--primary {
+  background-color: $color-primary-subtle;
+  color: $color-primary;
+}
+
+.badge--secondary {
+  background-color: $color-secondary-subtle;
+  color: $color-secondary-dark;
+}
+
+.badge--accent {
+  background-color: $color-accent-subtle;
+  color: $color-accent-text; // #BE3800 — 4.57:1 on accent-subtle
+}
+
+.badge--success {
+  background-color: $color-success-subtle;
+  color: $color-success-dark; // #166534 — 5.95:1 on success-subtle
+}
+
+.badge--warning {
+  background-color: $color-warning-subtle;
+  color: $color-warning-dark; // #92400E — 5.56:1 on warning-subtle
+}
+
+.badge--error {
+  background-color: $color-error-subtle;
+  color: $color-error-dark; // #991B1B — 6.26:1 on error-subtle
+}
+
+.badge--neutral {
+  background-color: $color-neutral-100;
+  color: $color-neutral-600;
+}
+
+.badge--dark {
+  background-color: $color-neutral-800;
+  color: $color-white;
+}

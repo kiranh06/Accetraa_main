@@ -9,7 +9,15 @@ const PageWrapper = ({ children }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
 
-  return <ErrorBoundary>{children}</ErrorBoundary>;
+  // id="main-content" is the skip-nav anchor target from the Navbar skip link.
+  // tabIndex={-1} allows programmatic focus without adding to natural tab order.
+  return (
+    <ErrorBoundary>
+      <div id="main-content" tabIndex={-1} style={{ outline: 'none' }}>
+        {children}
+      </div>
+    </ErrorBoundary>
+  );
 };
 
 export default PageWrapper;

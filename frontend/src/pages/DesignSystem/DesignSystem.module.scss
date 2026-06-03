@@ -1,0 +1,238 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.page {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: $space-8 $container-padding $space-32;
+}
+
+// ─── Page Header ──────────────────────────────────────────────────────────────
+
+.header {
+  padding-block: $space-12 $space-8;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: $space-12;
+}
+
+.tag {
+  display: inline-block;
+  padding: $space-1 $space-3;
+  background-color: $color-accent-subtle;
+  color: $color-accent-dark;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  border-radius: $radius-full;
+  margin-bottom: $space-4;
+}
+
+.title {
+  font-size: $font-size-5xl;
+  font-weight: $font-weight-bold;
+  letter-spacing: $tracking-tight;
+  color: $color-neutral-900;
+  line-height: $line-height-tight;
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  color: $color-neutral-500;
+  margin-top: $space-3;
+}
+
+// ─── Section Layout ───────────────────────────────────────────────────────────
+
+.section {
+  padding-block: $space-10;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.sectionTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-neutral-700;
+  letter-spacing: $tracking-tight;
+  margin-bottom: $space-8;
+  padding-bottom: $space-4;
+  border-bottom: 2px solid $color-primary-subtle;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.subsection {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.subsectionTitle {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-neutral-500;
+  letter-spacing: $tracking-wide;
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+}
+
+// ─── Row ──────────────────────────────────────────────────────────────────────
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.rowWrap {
+  flex-wrap: wrap;
+}
+
+// ─── Color Swatches ───────────────────────────────────────────────────────────
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: $space-3;
+}
+
+.swatch {
+  height: 80px;
+  border-radius: $radius-md;
+  padding: $space-3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.swatchName {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+}
+
+.swatchHex {
+  font-size: 0.65rem;
+  font-family: $font-mono;
+  opacity: 0.8;
+}
+
+// ─── Type Stack ───────────────────────────────────────────────────────────────
+
+.typeStack {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-6;
+  background: $color-neutral-50;
+  border-radius: $radius-lg;
+  border: 1px solid $border-color;
+
+  p { margin: 0; }
+}
+
+// ─── Card Grids ───────────────────────────────────────────────────────────────
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ─── Form Grid ────────────────────────────────────────────────────────────────
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-5;
+  max-width: 700px;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formFullWidth {
+  @include respond-to('md') {
+    grid-column: 1 / -1;
+  }
+}
+
+// ─── Section Header Demo ──────────────────────────────────────────────────────
+
+.sectionHeaderDemo {
+  padding: $space-8;
+  background: $color-surface;
+  border: 1px solid $border-color;
+  border-radius: $radius-lg;
+}
+
+.sectionHeaderDemoDark {
+  padding: $space-10;
+  background: $color-neutral-900;
+  border-radius: $radius-lg;
+}
+
+// ─── Shadow Cards ─────────────────────────────────────────────────────────────
+
+.shadowCard {
+  width: 120px;
+  height: 80px;
+  background: $color-white;
+  border-radius: $radius-md;
+  @include flex-center;
+  flex-direction: column;
+
+  &[data-level='xs'] { box-shadow: 0 1px 2px rgba(6,8,16,0.04); }
+  &[data-level='sm'] { box-shadow: 0 1px 4px rgba(6,8,16,0.06), 0 1px 2px rgba(6,8,16,0.04); }
+  &[data-level='md'] { box-shadow: 0 4px 12px rgba(6,8,16,0.08), 0 2px 4px rgba(6,8,16,0.04); }
+  &[data-level='lg'] { box-shadow: 0 8px 24px rgba(6,8,16,0.10), 0 4px 8px rgba(6,8,16,0.06); }
+  &[data-level='xl'] { box-shadow: 0 16px 48px rgba(6,8,16,0.12), 0 8px 16px rgba(6,8,16,0.08); }
+}
+
+.shadowLabel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-neutral-500;
+}
+
+// ─── Radius Demo ──────────────────────────────────────────────────────────────
+
+.radiusDemo {
+  width: 80px;
+  height: 80px;
+  background: $color-primary-subtle;
+  border: 2px solid $color-primary;
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-1;
+
+  span {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: $color-primary;
+
+    &:last-child {
+      color: $color-neutral-400;
+      font-family: $font-mono;
+    }
+  }
+}

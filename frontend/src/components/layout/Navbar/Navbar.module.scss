@@ -1,6 +1,31 @@
 @use '@/styles/abstracts/variables' as *;
 @use '@/styles/abstracts/mixins' as *;
 
+// ─── Skip Navigation ──────────────────────────────────────────────────────────
+
+.skipNav {
+  position: absolute;
+  top: $space-3;
+  left: $space-3;
+  z-index: $z-max;
+  padding: $space-3 $space-6;
+  background-color: $color-primary;
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-md;
+  text-decoration: none;
+  // Visually hidden until focused by keyboard
+  transform: translateY(-200%);
+  transition: transform $transition-fast;
+
+  &:focus {
+    transform: translateY(0);
+    outline: 3px solid $color-white;
+    outline-offset: 2px;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -53,17 +78,28 @@
 }
 
 .navLink {
-  display: block;
-  padding: $space-3 $space-4;
+  display: flex;
+  align-items: center;
+  min-height: 44px; // WCAG 2.5.5 touch target on mobile
+  padding: $space-2 $space-4;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
   color: $color-neutral-700;
   border-radius: $radius-md;
   transition: color $transition-fast, background-color $transition-fast;
 
+  @include respond-to('lg') {
+    min-height: unset;
+    padding: $space-3 $space-4;
+  }
+
   &:hover {
     color: $color-primary;
     background-color: $color-neutral-100;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
   }
 }
 

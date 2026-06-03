@@ -1,22 +1,93 @@
 @use '../abstracts/variables' as *;
 
-h1 { font-size: $font-size-4xl; }
-h2 { font-size: $font-size-3xl; }
-h3 { font-size: $font-size-2xl; }
+// ─── Heading Scale ────────────────────────────────────────────────────────────
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: $tracking-tight;
+  color: $color-neutral-900;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+
+  @media (min-width: #{$bp-lg}) {
+    font-size: $font-size-5xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+
+  @media (min-width: #{$bp-lg}) {
+    font-size: $font-size-4xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-2xl;
+
+  @media (min-width: #{$bp-lg}) {
+    font-size: $font-size-3xl;
+  }
+}
+
 h4 { font-size: $font-size-xl; }
 h5 { font-size: $font-size-lg; }
 h6 { font-size: $font-size-base; }
 
+// ─── Body Text ────────────────────────────────────────────────────────────────
+
 p {
   line-height: $line-height-relaxed;
-  color: $color-neutral-700;
+  color: $color-neutral-600;
 }
 
-small { font-size: $font-size-sm; }
+.lead {
+  font-size: $font-size-lg;
+  color: $color-neutral-600;
+  line-height: $line-height-relaxed;
+}
 
-strong { font-weight: $font-weight-semibold; }
+small {
+  font-size: $font-size-sm;
+  color: $color-neutral-500;
+}
+
+strong {
+  font-weight: $font-weight-semibold;
+  color: $color-neutral-800;
+}
+
+// ─── Eyebrow Label ────────────────────────────────────────────────────────────
+
+.eyebrow {
+  display: inline-block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: $color-primary;
+}
+
+// ─── Links ────────────────────────────────────────────────────────────────────
+
+a.text-link {
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  border-bottom: 1px solid transparent;
+  transition: border-color 150ms ease;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+}
+
+// ─── Selection ────────────────────────────────────────────────────────────────
 
 ::selection {
-  background-color: $color-primary;
-  color: $color-white;
+  background-color: $color-primary-subtle;
+  color: $color-primary-dark;
 }

@@ -59,3 +59,25 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: $font-weight-bold;
   line-height: $line-height-tight;
 }
+
+// Ensure interactive elements are always keyboard-reachable
+button:disabled {
+  cursor: not-allowed;
+}
+
+// Screen-reader-only live region container (injected by JS for announcements)
+[aria-live] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+// Prevent iOS tap highlight on interactive elements
+a,
+button,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}

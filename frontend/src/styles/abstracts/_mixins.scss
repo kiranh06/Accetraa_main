@@ -1,15 +1,27 @@
 @use 'variables' as *;
 
-// ─── Breakpoints ─────────────────────────────────────────────────────────────
+// ─── BREAKPOINTS ──────────────────────────────────────────────────────────────
+// Usage: @include respond-to('md') { ... }
+
 @mixin respond-to($bp) {
-  @if $bp == 'sm'  { @media (min-width: $bp-sm)  { @content; } }
+  @if      $bp == 'xs'  { @media (min-width: $bp-xs)  { @content; } }
+  @else if $bp == 'sm'  { @media (min-width: $bp-sm)  { @content; } }
   @else if $bp == 'md'  { @media (min-width: $bp-md)  { @content; } }
   @else if $bp == 'lg'  { @media (min-width: $bp-lg)  { @content; } }
   @else if $bp == 'xl'  { @media (min-width: $bp-xl)  { @content; } }
   @else if $bp == 'xxl' { @media (min-width: $bp-xxl) { @content; } }
 }
 
-// ─── Layout Helpers ──────────────────────────────────────────────────────────
+@mixin respond-below($bp) {
+  @if      $bp == 'sm'  { @media (max-width: #{$bp-sm - 1})  { @content; } }
+  @else if $bp == 'md'  { @media (max-width: #{$bp-md - 1})  { @content; } }
+  @else if $bp == 'lg'  { @media (max-width: #{$bp-lg - 1})  { @content; } }
+  @else if $bp == 'xl'  { @media (max-width: #{$bp-xl - 1})  { @content; } }
+}
+
+
+// ─── LAYOUT ───────────────────────────────────────────────────────────────────
+
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -22,22 +34,55 @@
   justify-content: space-between;
 }
 
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 @mixin container {
   width: 100%;
   max-width: $container-max-width;
   margin-inline: auto;
   padding-inline: $container-padding;
-}
-
-@mixin section-padding {
-  padding-block: $space-16;
 
   @include respond-to('lg') {
-    padding-block: $space-24;
+    padding-inline: $container-padding-lg;
   }
 }
 
-// ─── Typography ──────────────────────────────────────────────────────────────
+@mixin container-narrow {
+  width: 100%;
+  max-width: $container-max-width-narrow;
+  margin-inline: auto;
+  padding-inline: $container-padding;
+}
+
+@mixin container-full {
+  width: 100%;
+  padding-inline: $container-padding;
+
+  @include respond-to('lg') {
+    padding-inline: $container-padding-lg;
+  }
+}
+
+@mixin section-padding($size: 'md') {
+  @if $size == 'sm' {
+    padding-block: $section-sm;
+    @include respond-to('lg') { padding-block: $section-md; }
+  } @else if $size == 'md' {
+    padding-block: $section-md;
+    @include respond-to('lg') { padding-block: $section-lg; }
+  } @else if $size == 'lg' {
+    padding-block: $section-lg;
+    @include respond-to('lg') { padding-block: $section-hero; }
+  }
+}
+
+
+// ─── TYPOGRAPHY ───────────────────────────────────────────────────────────────
+
 @mixin truncate($lines: 1) {
   @if $lines == 1 {
     overflow: hidden;
@@ -51,16 +96,74 @@
   }
 }
 
-// ─── Skeleton Shimmer ─────────────────────────────────────────────────────────
+@mixin heading-display {
+  font-weight: $font-weight-bold;
+  letter-spacing: $tracking-tight;
+  line-height: $line-height-tight;
+}
+
+@mixin body-text {
+  font-weight: $font-weight-regular;
+  letter-spacing: $tracking-normal;
+  line-height: $line-height-relaxed;
+}
+
+@mixin label-text {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+}
+
+
+// ─── INTERACTION ──────────────────────────────────────────────────────────────
+
+@mixin focus-ring($color: $color-primary) {
+  outline: 2px solid $color;
+  outline-offset: 2px;
+}
+
+@mixin focus-ring-inset($color: $color-primary) {
+  outline: 2px solid $color;
+  outline-offset: -2px;
+}
+
+@mixin hover-lift {
+  transition: transform $transition-base, box-shadow $transition-base;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-hover;
+  }
+}
+
+@mixin card-base {
+  background: $color-surface;
+  border: $border-width solid $border-color;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+@mixin card-hover {
+  transition: box-shadow $transition-base, transform $transition-base, border-color $transition-base;
+  &:hover {
+    box-shadow: $shadow-hover;
+    transform: translateY(-2px);
+    border-color: $color-neutral-200;
+  }
+}
+
+
+// ─── LOADING / SKELETON ───────────────────────────────────────────────────────
+
 @mixin skeleton-shimmer {
   background: linear-gradient(
     90deg,
-    $color-neutral-200 25%,
+    $color-neutral-150 25%,
     $color-neutral-100 50%,
-    $color-neutral-200 75%
+    $color-neutral-150 75%
   );
   background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
+  animation: shimmer 1.6s ease-in-out infinite;
 }
 
 @keyframes shimmer {
@@ -68,8 +171,55 @@
   100% { background-position: -200% 0; }
 }
 
-// ─── Focus Ring ──────────────────────────────────────────────────────────────
-@mixin focus-ring {
-  outline: 2px solid $color-primary;
-  outline-offset: 2px;
+
+// ─── FORM ELEMENTS ────────────────────────────────────────────────────────────
+
+@mixin input-base {
+  width: 100%;
+  padding: $space-3 $space-4;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  color: $color-neutral-900;
+  background: $color-surface;
+  border: $border-width solid $border-color-dark;
+  border-radius: $radius-md;
+  outline: none;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &::placeholder {
+    color: $color-neutral-400;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: $color-neutral-300;
+  }
+
+  &:focus {
+    border-color: $border-color-focus;
+    box-shadow: 0 0 0 3px $color-primary-subtle;
+  }
+
+  &:disabled {
+    background: $color-neutral-50;
+    color: $color-neutral-400;
+    cursor: not-allowed;
+  }
+}
+
+
+// ─── GRADIENT UTILITIES ───────────────────────────────────────────────────────
+
+@mixin gradient-primary {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+}
+
+@mixin gradient-dark {
+  background: linear-gradient(135deg, $color-neutral-900 0%, $color-neutral-800 100%);
+}
+
+@mixin text-gradient($from: $color-primary, $to: $color-secondary-light) {
+  background: linear-gradient(135deg, $from 0%, $to 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

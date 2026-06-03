@@ -1,27 +1,79 @@
-// ─── Color Palette ───────────────────────────────────────────────────────────
-$color-primary:       #0057FF;
-$color-primary-dark:  #0040CC;
-$color-primary-light: #3D7FFF;
+// ═══════════════════════════════════════════════════════════════════════════════
+// ACCETRAA DESIGN SYSTEM — TOKEN DEFINITIONS
+// Theme: Premium Enterprise / Corporate SaaS (Accenture reference)
+// ═══════════════════════════════════════════════════════════════════════════════
 
-$color-secondary:     #00C2A8;
-$color-accent:        #FF6B35;
+// ─── 1. COLOR SYSTEM ───────────────────────────────────────────────────────────
 
-$color-neutral-900:   #0D0D0D;
-$color-neutral-800:   #1A1A2E;
-$color-neutral-700:   #2D2D44;
-$color-neutral-400:   #8888A0;
-$color-neutral-200:   #D9D9E8;
-$color-neutral-100:   #F4F4FA;
-$color-white:         #FFFFFF;
+// Primary — Deep Corporate Blue (confident, institutional)
+$color-primary:        #0038A8;
+$color-primary-dark:   #002880;
+$color-primary-light:  #1A57D6;
+$color-primary-subtle: #E8EEFB;
 
-$color-success:       #22C55E;
-$color-error:         #EF4444;
-$color-warning:       #F59E0B;
+// Secondary — Enterprise Teal (trust, innovation)
+$color-secondary:        #00897B;
+$color-secondary-dark:   #006B61;
+$color-secondary-light:  #00BFA5;
+$color-secondary-subtle: #E0F4F2;
 
-// ─── Typography ──────────────────────────────────────────────────────────────
-$font-primary:   'Inter', system-ui, -apple-system, sans-serif;
-$font-mono:      'JetBrains Mono', 'Courier New', monospace;
+// Accent — Signal Orange (energy, urgency, high-impact CTAs)
+$color-accent:        #FF4D00;
+$color-accent-dark:   #D94000;
+$color-accent-light:  #FF7340;
+$color-accent-subtle: #FFF0EB;
 
+// Semantic — Success
+$color-success:        #16A34A;
+$color-success-dark:   #166534; // 5.95:1 on success-subtle — use for badge/text
+$color-success-subtle: #DCFCE7;
+
+// Semantic — Warning
+$color-warning:        #D97706;
+$color-warning-dark:   #92400E; // 5.56:1 on warning-subtle — use for badge/text
+$color-warning-subtle: #FEF3C7;
+
+// Semantic — Error
+$color-error:        #DC2626;
+$color-error-dark:   #991B1B; // 6.26:1 on error-subtle — use for badge/text
+$color-error-subtle: #FEE2E2;
+
+// Accent text token (for use on accent-subtle bg — 4.57:1)
+$color-accent-text: #BE3800;
+
+// Neutral Scale — Blue-tinted for premium enterprise character
+// Each stop is perceptually equidistant
+$color-neutral-950: #060810;
+$color-neutral-900: #0C1120;
+$color-neutral-800: #151D30;
+$color-neutral-700: #232E42;
+$color-neutral-600: #374357;
+$color-neutral-500: #556070;
+$color-neutral-400: #7F8E9E;
+$color-neutral-300: #B0BCCA;
+$color-neutral-200: #D4DCE5;
+$color-neutral-150: #E0E7EE;
+$color-neutral-100: #EBF0F5;
+$color-neutral-50:  #F5F8FB;
+$color-white:       #FFFFFF;
+
+// Surface tokens (semantic aliases for backgrounds)
+$color-surface:      $color-white;
+$color-surface-alt:  $color-neutral-50;
+$color-surface-dark: $color-neutral-900;
+
+// Border tokens
+$border-color:       $color-neutral-150;
+$border-color-dark:  $color-neutral-200;
+$border-color-focus: $color-primary;
+
+
+// ─── 2. TYPOGRAPHY SYSTEM ──────────────────────────────────────────────────────
+
+$font-primary: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-mono:    'JetBrains Mono', 'Cascadia Code', 'Courier New', monospace;
+
+// Type scale
 $font-size-xs:   0.75rem;    // 12px
 $font-size-sm:   0.875rem;   // 14px
 $font-size-base: 1rem;       // 16px
@@ -32,66 +84,139 @@ $font-size-3xl:  1.875rem;   // 30px
 $font-size-4xl:  2.25rem;    // 36px
 $font-size-5xl:  3rem;       // 48px
 $font-size-6xl:  3.75rem;    // 60px
+$font-size-7xl:  4.5rem;     // 72px — hero display only
 
-$font-weight-regular: 400;
-$font-weight-medium:  500;
+// Weights
+$font-weight-regular:  400;
+$font-weight-medium:   500;
 $font-weight-semibold: 600;
-$font-weight-bold:    700;
+$font-weight-bold:     700;
+$font-weight-black:    900;
 
+// Line heights
+$line-height-none:    1;
 $line-height-tight:   1.2;
 $line-height-snug:    1.4;
 $line-height-normal:  1.6;
 $line-height-relaxed: 1.75;
 
-// ─── Spacing Scale ───────────────────────────────────────────────────────────
-$space-1:  0.25rem;
-$space-2:  0.5rem;
-$space-3:  0.75rem;
-$space-4:  1rem;
-$space-5:  1.25rem;
-$space-6:  1.5rem;
-$space-8:  2rem;
-$space-10: 2.5rem;
-$space-12: 3rem;
-$space-16: 4rem;
-$space-20: 5rem;
-$space-24: 6rem;
-$space-32: 8rem;
+// Letter spacing
+$tracking-tighter: -0.04em;
+$tracking-tight:   -0.02em;
+$tracking-normal:   0em;
+$tracking-wide:     0.04em;
+$tracking-wider:    0.08em;
+$tracking-widest:   0.12em;
 
-// ─── Layout ──────────────────────────────────────────────────────────────────
-$container-max-width: 1280px;
-$container-padding:   1.5rem;
-$navbar-height:       72px;
 
-// ─── Breakpoints ─────────────────────────────────────────────────────────────
-$bp-sm:  480px;
-$bp-md:  768px;
-$bp-lg:  1024px;
-$bp-xl:  1280px;
-$bp-xxl: 1440px;
+// ─── 3. SPACING SYSTEM (4px base grid) ────────────────────────────────────────
 
-// ─── Borders & Radius ────────────────────────────────────────────────────────
+$space-0:  0;
+$space-1:  0.25rem;   //  4px
+$space-2:  0.5rem;    //  8px
+$space-3:  0.75rem;   // 12px
+$space-4:  1rem;      // 16px
+$space-5:  1.25rem;   // 20px
+$space-6:  1.5rem;    // 24px
+$space-7:  1.75rem;   // 28px
+$space-8:  2rem;      // 32px
+$space-9:  2.25rem;   // 36px
+$space-10: 2.5rem;    // 40px
+$space-11: 2.75rem;   // 44px (min touch target)
+$space-12: 3rem;      // 48px
+$space-14: 3.5rem;    // 56px
+$space-16: 4rem;      // 64px
+$space-20: 5rem;      // 80px
+$space-24: 6rem;      // 96px
+$space-28: 7rem;      // 112px
+$space-32: 8rem;      // 128px
+$space-40: 10rem;     // 160px
+$space-48: 12rem;     // 192px
+
+// Section spacing tokens
+$section-sm:   $space-16;   // 64px  — tight sections
+$section-md:   $space-24;   // 96px  — standard sections
+$section-lg:   $space-32;   // 128px — prominent sections
+$section-hero: $space-40;   // 160px — hero blocks
+
+
+// ─── 4. LAYOUT ────────────────────────────────────────────────────────────────
+
+$container-max-width:        1280px;
+$container-max-width-narrow: 800px;
+$container-max-width-wide:   1440px;
+$container-padding:          1.5rem;
+$container-padding-lg:       2.5rem;
+$navbar-height:              72px;
+
+
+// ─── 5. BREAKPOINTS ───────────────────────────────────────────────────────────
+// Mobile-first. Each maps to a device category.
+
+$bp-xs:  375px;   // small phones
+$bp-sm:  480px;   // phones (landscape)
+$bp-md:  768px;   // tablets
+$bp-lg:  1024px;  // laptops / small desktops
+$bp-xl:  1280px;  // standard desktops
+$bp-xxl: 1440px;  // large desktops
+
+
+// ─── 6. BORDER & RADIUS ───────────────────────────────────────────────────────
+
+$radius-xs:   2px;
 $radius-sm:   4px;
 $radius-md:   8px;
 $radius-lg:   12px;
 $radius-xl:   16px;
+$radius-2xl:  24px;
 $radius-full: 9999px;
 
-$border-color: $color-neutral-200;
+$border-width:    1px;
+$border-width-lg: 2px;
 
-// ─── Shadows ─────────────────────────────────────────────────────────────────
-$shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.08);
-$shadow-md:  0 4px 16px rgba(0, 0, 0, 0.10);
-$shadow-lg:  0 8px 32px rgba(0, 0, 0, 0.12);
-$shadow-xl:  0 16px 48px rgba(0, 0, 0, 0.16);
 
-// ─── Transitions ─────────────────────────────────────────────────────────────
-$transition-fast:   0.15s ease;
-$transition-base:   0.25s ease;
-$transition-slow:   0.4s ease;
+// ─── 7. SHADOWS & ELEVATION ───────────────────────────────────────────────────
+// Elevation 1 = card | 2 = hover / dropdown | 3 = modal
 
-// ─── Z-index ─────────────────────────────────────────────────────────────────
-$z-navbar:   100;
-$z-modal:    200;
-$z-toast:    300;
-$z-tooltip:  400;
+$shadow-xs:  0 1px 2px rgba(6, 8, 16, 0.04);
+$shadow-sm:  0 1px 4px rgba(6, 8, 16, 0.06), 0 1px 2px rgba(6, 8, 16, 0.04);
+$shadow-md:  0 4px 12px rgba(6, 8, 16, 0.08), 0 2px 4px rgba(6, 8, 16, 0.04);
+$shadow-lg:  0 8px 24px rgba(6, 8, 16, 0.10), 0 4px 8px rgba(6, 8, 16, 0.06);
+$shadow-xl:  0 16px 48px rgba(6, 8, 16, 0.12), 0 8px 16px rgba(6, 8, 16, 0.08);
+$shadow-2xl: 0 24px 64px rgba(6, 8, 16, 0.18), 0 12px 24px rgba(6, 8, 16, 0.12);
+
+// Semantic shadow aliases
+$shadow-card:     $shadow-sm;
+$shadow-hover:    $shadow-md;
+$shadow-dropdown: $shadow-lg;
+$shadow-modal:    $shadow-xl;
+$shadow-inner:    inset 0 1px 2px rgba(6, 8, 16, 0.06);
+
+// Brand-tinted shadows (used on primary/accent button hover)
+$shadow-primary: 0 4px 16px rgba(0, 56, 168, 0.28);
+$shadow-accent:  0 4px 16px rgba(255, 77, 0, 0.28);
+
+
+// ─── 8. TRANSITIONS & ANIMATION ───────────────────────────────────────────────
+
+$transition-fast:   150ms ease;
+$transition-base:   250ms ease;
+$transition-slow:   400ms ease;
+$transition-spring: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+$easing-standard:   cubic-bezier(0.4, 0, 0.2, 1);
+$easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+$easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+
+
+// ─── 9. Z-INDEX SCALE ─────────────────────────────────────────────────────────
+
+$z-base:    0;
+$z-raised:  10;
+$z-sticky:  50;
+$z-navbar:  100;
+$z-overlay: 150;
+$z-modal:   200;
+$z-toast:   300;
+$z-tooltip: 400;
+$z-max:     9999;
