@@ -1,0 +1,62 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface-alt;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-12;
+
+  @include respond-to('lg') {
+    grid-template-columns: 320px 1fr;
+    gap: $space-16;
+    align-items: start;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+
+  @include respond-to('lg') {
+    position: sticky;
+    top: calc($navbar-height + $space-8);
+  }
+}
+
+.contactNote {
+  padding: $space-6;
+  background: $color-primary-subtle;
+  border: 1px solid rgba($color-primary, 0.15);
+  border-radius: $radius-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.contactText {
+  font-size: $font-size-sm;
+  color: $color-neutral-600;
+  margin: 0;
+}
+
+.contactLink {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover { color: $color-primary-dark; text-decoration: underline; }
+
+  &:focus-visible { @include focus-ring; border-radius: $radius-sm; }
+}
+
+.right {
+  min-width: 0;
+}

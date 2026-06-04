@@ -1,0 +1,200 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface;
+}
+
+.header {
+  margin-bottom: $space-12;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+// ─── Card shell ───────────────────────────────────────────────────────────────
+
+.card {
+  border: 1px solid $border-color;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  background: $color-surface;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &--open {
+    border-color: $color-primary-subtle;
+    box-shadow: $shadow-md;
+  }
+}
+
+.cardTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-6;
+  padding: $space-7 $space-8;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background $transition-fast;
+
+  .card--open & { background: $color-neutral-50; }
+
+  &:focus-visible { @include focus-ring-inset; border-radius: $radius-xl; }
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.category {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: $color-primary;
+}
+
+.cardTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-neutral-900;
+  letter-spacing: $tracking-tight;
+  margin: 0;
+
+  @include respond-to('lg') { font-size: $font-size-2xl; }
+}
+
+.toggleWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: $color-primary-subtle;
+  border-radius: $radius-lg;
+  color: $color-primary;
+  flex-shrink: 0;
+  transition: background $transition-fast, color $transition-fast;
+
+  .card--open & {
+    background: $color-primary;
+    color: $color-white;
+  }
+}
+
+.chevron {
+  transition: transform 280ms $easing-standard;
+
+  &--open { transform: rotate(180deg); }
+}
+
+// ─── Panel ────────────────────────────────────────────────────────────────────
+
+.panelWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms $easing-standard;
+
+  &--open { grid-template-rows: 1fr; }
+}
+
+.panel {
+  overflow: hidden;
+  padding: 0 $space-8;
+  transition: padding 300ms $easing-standard;
+
+  .panelWrap--open & { padding: 0 $space-8 $space-8; }
+}
+
+.overview {
+  font-size: $font-size-base;
+  color: $color-neutral-600;
+  line-height: $line-height-relaxed;
+  margin: 0 0 $space-8;
+  padding-top: $space-6;
+  border-top: 1px solid $border-color;
+}
+
+// ─── Detail grid ─────────────────────────────────────────────────────────────
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-8;
+
+  @include respond-to('lg') { grid-template-columns: 1fr 1fr; }
+}
+
+.detailBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.detailHeading {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  color: $color-neutral-400;
+  margin: 0;
+
+  &--mt { margin-top: $space-4; }
+}
+
+.benefitsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-3;
+  font-size: $font-size-sm;
+  color: $color-neutral-700;
+  line-height: $line-height-relaxed;
+}
+
+.checkIcon {
+  color: $color-secondary;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.businessValue {
+  font-size: $font-size-sm;
+  color: $color-neutral-500;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.techTag {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-neutral-700;
+  background: $color-neutral-100;
+  border: 1px solid $border-color;
+  border-radius: $radius-full;
+  padding: $space-1 $space-3;
+  letter-spacing: $tracking-wide;
+}
