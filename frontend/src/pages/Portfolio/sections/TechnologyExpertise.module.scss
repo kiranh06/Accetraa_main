@@ -1,0 +1,83 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface;
+}
+
+.header { margin-bottom: $space-12; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-5;
+
+  @include respond-to('sm')  { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to('xl')  { grid-template-columns: repeat(4, 1fr); }
+}
+
+// ─── Category card ────────────────────────────────────────────────────────────
+
+.category {
+  border: 1px solid $border-color;
+  border-radius: $radius-xl;
+  overflow: hidden;
+}
+
+.catLabel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  margin: 0;
+  padding: $space-4 $space-6;
+
+  .category--primary  & { background: $color-primary-subtle;  color: $color-primary;  }
+  .category--secondary & { background: $color-secondary-subtle; color: $color-secondary; }
+  .category--neutral  & { background: $color-neutral-100;      color: $color-neutral-700; }
+  .category--accent   & { background: $color-accent-subtle;   color: $color-accent-text; }
+}
+
+.techList {
+  padding: $space-3 $space-2;
+  display: flex;
+  flex-direction: column;
+}
+
+// ─── Individual tech row ──────────────────────────────────────────────────────
+
+.tech {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-3 $space-4;
+  border-radius: $radius-lg;
+  transition: background $transition-fast;
+
+  &:hover { background: $color-neutral-50; }
+}
+
+.techName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-neutral-800;
+}
+
+.techLevel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-wide;
+  border-radius: $radius-full;
+  padding: 2px $space-2;
+
+  &--expert {
+    background: $color-success-subtle;
+    color: $color-success-dark;
+  }
+
+  &--advanced {
+    background: $color-primary-subtle;
+    color: $color-primary;
+  }
+}

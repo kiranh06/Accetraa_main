@@ -1,0 +1,205 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+// ─── Backdrop ─────────────────────────────────────────────────────────────────
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba($color-neutral-950, 0.72);
+  backdrop-filter: blur(4px);
+  z-index: $z-modal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-4;
+  animation: fadeIn 200ms $easing-decelerate;
+
+  @include respond-to('md') { padding: $space-8; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// ─── Modal shell ──────────────────────────────────────────────────────────────
+
+.modal {
+  background: $color-surface;
+  border-radius: $radius-2xl;
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: $shadow-2xl;
+  animation: slideUp 250ms $easing-decelerate;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ─── Header ───────────────────────────────────────────────────────────────────
+
+.modalHeader {
+  @include flex-between;
+  padding: $space-5 $space-6;
+  border-bottom: 1px solid $border-color;
+  flex-shrink: 0;
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  flex-wrap: wrap;
+}
+
+.category {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: $color-white;
+  background: $color-primary;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+}
+
+.client {
+  font-size: $font-size-sm;
+  color: $color-neutral-500;
+  font-weight: $font-weight-medium;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: $color-neutral-100;
+  border: none;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  color: $color-neutral-600;
+  flex-shrink: 0;
+  transition: background $transition-fast, color $transition-fast;
+
+  &:hover  { background: $color-neutral-200; color: $color-neutral-900; }
+  &:focus-visible { @include focus-ring; border-radius: $radius-lg; }
+}
+
+// ─── Scrollable body ──────────────────────────────────────────────────────────
+
+.modalBody {
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+// ─── Gallery ──────────────────────────────────────────────────────────────────
+
+.gallery {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: $color-neutral-100;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.galleryPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: linear-gradient(135deg, $color-neutral-100 0%, $color-neutral-150 100%);
+  @include flex-center;
+  color: $color-neutral-300;
+}
+
+// ─── Content ──────────────────────────────────────────────────────────────────
+
+.content {
+  padding: $space-7 $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-neutral-900;
+  letter-spacing: $tracking-tight;
+  line-height: $line-height-snug;
+  margin: 0;
+
+  @include respond-to('lg') { font-size: $font-size-3xl; }
+}
+
+.description {
+  font-size: $font-size-base;
+  color: $color-neutral-600;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.techSection {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.sectionLabel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: $color-neutral-400;
+  margin: 0;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.techTag {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  background: $color-primary-subtle;
+  border: 1px solid rgba($color-primary, 0.2);
+  border-radius: $radius-full;
+  padding: $space-1 $space-3;
+  letter-spacing: $tracking-wide;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  text-decoration: none;
+  padding: $space-3 $space-5;
+  background: $color-primary-subtle;
+  border: 1px solid rgba($color-primary, 0.2);
+  border-radius: $radius-lg;
+  transition: background $transition-fast, border-color $transition-fast;
+  width: fit-content;
+
+  &:hover { background: rgba($color-primary, 0.12); border-color: rgba($color-primary, 0.35); }
+  &:focus-visible { @include focus-ring; }
+}

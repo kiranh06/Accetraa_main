@@ -6,3 +6,8 @@ export const getPortfolio = async (params = {}) => {
 };
 
 export const getPortfolioFeatured = () => getPortfolio({ featured: true });
+
+export const getPortfolioCategories = async () => {
+  const response = await axiosInstance.get('/api/v1/portfolio/categories/');
+  return response.data;
+};

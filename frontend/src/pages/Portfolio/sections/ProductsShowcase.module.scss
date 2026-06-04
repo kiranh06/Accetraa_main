@@ -1,0 +1,58 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface;
+}
+
+.header {
+  margin-bottom: $space-12;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include respond-to('md') { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to('xl') { grid-template-columns: repeat(3, 1fr); }
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-14 $space-8;
+  background: $color-neutral-50;
+  border: 1px solid $border-color;
+  border-radius: $radius-2xl;
+  text-align: center;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+.feedbackTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-neutral-900;
+  margin: 0;
+}
+
+.feedbackBody {
+  font-size: $font-size-sm;
+  color: $color-neutral-500;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.devError {
+  font-size: $font-size-xs;
+  font-family: $font-mono;
+  color: $color-error;
+  background: $color-error-subtle;
+  border-radius: $radius-md;
+  padding: $space-2 $space-3;
+  word-break: break-all;
+}
