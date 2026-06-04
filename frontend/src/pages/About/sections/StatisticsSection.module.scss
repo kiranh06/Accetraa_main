@@ -1,0 +1,105 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 10% 50%, rgba($color-white, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 90% 20%, rgba($color-white, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
+.header {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: $space-14;
+}
+
+.eyebrow {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: rgba($color-white, 0.6);
+  margin-bottom: $space-4;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  letter-spacing: $tracking-tight;
+  line-height: $line-height-snug;
+  margin: 0 0 $space-5;
+
+  @include respond-to('lg') { font-size: $font-size-4xl; }
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  color: rgba($color-white, 0.65);
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-6;
+
+  @include respond-to('md') { grid-template-columns: repeat(3, 1fr); }
+  @include respond-to('lg') { grid-template-columns: repeat(6, 1fr); }
+}
+
+.stat {
+  text-align: center;
+  padding: $space-7 $space-4;
+  background: rgba($color-white, 0.06);
+  border: 1px solid rgba($color-white, 0.10);
+  border-radius: $radius-xl;
+  transition: background $transition-base, border-color $transition-base;
+
+  &:hover {
+    background: rgba($color-white, 0.10);
+    border-color: rgba($color-white, 0.20);
+  }
+}
+
+.statValue {
+  display: block;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-black;
+  color: $color-white;
+  letter-spacing: $tracking-tighter;
+  line-height: $line-height-none;
+  margin-bottom: $space-2;
+
+  @include respond-to('lg') { font-size: $font-size-5xl; }
+}
+
+.statLabel {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: rgba($color-white, 0.85);
+  letter-spacing: $tracking-wide;
+  margin-bottom: $space-2;
+}
+
+.statDescription {
+  font-size: $font-size-xs;
+  color: rgba($color-white, 0.5);
+  line-height: $line-height-relaxed;
+  margin: 0;
+}

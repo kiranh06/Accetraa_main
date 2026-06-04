@@ -1,0 +1,93 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: $color-surface;
+  border: 1px solid $border-color;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  transition: box-shadow $transition-base, transform $transition-base, border-color $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+    transform: translateY(-3px);
+    border-color: $color-primary-subtle;
+  }
+}
+
+.photoWrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: $color-neutral-100;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  @include flex-center;
+}
+
+.initials {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  color: rgba($color-white, 0.9);
+  letter-spacing: $tracking-wide;
+}
+
+.body {
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  flex: 1;
+}
+
+.name {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-neutral-900;
+  letter-spacing: $tracking-tight;
+  margin: 0;
+}
+
+.role {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  text-transform: uppercase;
+  letter-spacing: $tracking-wider;
+}
+
+.description {
+  font-size: $font-size-sm;
+  color: $color-neutral-500;
+  line-height: $line-height-relaxed;
+  margin: $space-2 0 0;
+}
+
+.linkedIn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  margin-top: $space-4;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover { color: $color-primary-dark; }
+
+  &:focus-visible { @include focus-ring; border-radius: $radius-sm; }
+}

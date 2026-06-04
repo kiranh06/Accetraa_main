@@ -1,0 +1,30 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface;
+}
+
+.header {
+  margin-bottom: $space-12;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include respond-to('sm')  { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to('xl')  { grid-template-columns: repeat(4, 1fr); }
+}
+
+.footnote {
+  margin-top: $space-12;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $color-neutral-400;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: $line-height-relaxed;
+}

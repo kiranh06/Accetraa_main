@@ -1,0 +1,78 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-12;
+
+  @include respond-to('lg') {
+    grid-template-columns: 1fr 420px;
+    align-items: start;
+    gap: $space-16;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.body {
+  font-size: $font-size-base;
+  color: $color-neutral-600;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.infoCard {
+  background: $color-neutral-50;
+  border: 1px solid $border-color;
+  border-radius: $radius-xl;
+  padding: $space-7;
+}
+
+.infoTitle {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-neutral-900;
+  letter-spacing: $tracking-tight;
+  margin: 0 0 $space-5;
+  padding-bottom: $space-4;
+  border-bottom: 1px solid $border-color;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  font-size: $font-size-sm;
+  color: $color-neutral-700;
+  font-weight: $font-weight-medium;
+}
+
+.checkIcon {
+  color: $color-secondary;
+  flex-shrink: 0;
+}

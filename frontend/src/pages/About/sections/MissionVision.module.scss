@@ -1,0 +1,105 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: linear-gradient(160deg, $color-neutral-900 0%, $color-neutral-800 100%);
+}
+
+.header {
+  margin-bottom: $space-12;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-8;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  padding: $space-10;
+  border-radius: $radius-2xl;
+  border: 1px solid rgba($color-white, 0.08);
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &[data-card="mission"] {
+    background: linear-gradient(145deg, rgba($color-primary, 0.25) 0%, rgba($color-primary-dark, 0.12) 100%);
+
+    &:hover { border-color: rgba($color-primary-light, 0.4); }
+
+    .cardIconWrap { background-color: rgba($color-primary, 0.3); color: $color-primary-light; }
+    .cardLabel     { color: $color-primary-light; }
+    .pill          { background: rgba($color-primary, 0.25); color: rgba($color-white, 0.8); border-color: rgba($color-primary-light, 0.3); }
+  }
+
+  &[data-card="vision"] {
+    background: linear-gradient(145deg, rgba($color-secondary, 0.22) 0%, rgba($color-secondary-dark, 0.10) 100%);
+
+    &:hover { border-color: rgba($color-secondary-light, 0.4); }
+
+    .cardIconWrap { background-color: rgba($color-secondary, 0.3); color: $color-secondary-light; }
+    .cardLabel     { color: $color-secondary-light; }
+    .pill          { background: rgba($color-secondary, 0.25); color: rgba($color-white, 0.8); border-color: rgba($color-secondary-light, 0.3); }
+  }
+}
+
+.cardIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: $radius-xl;
+  flex-shrink: 0;
+}
+
+.cardLabel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  letter-spacing: $tracking-tight;
+  line-height: $line-height-snug;
+  margin: 0;
+
+  @include respond-to('lg') { font-size: $font-size-3xl; }
+}
+
+.cardBody {
+  font-size: $font-size-base;
+  color: rgba($color-white, 0.65);
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.pillList {
+  list-style: none;
+  margin: $space-2 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.pill {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+  border: 1px solid transparent;
+  letter-spacing: $tracking-wide;
+}
