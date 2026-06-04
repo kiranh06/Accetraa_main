@@ -83,24 +83,18 @@ TEMPLATES = [
 
 
 # ── Database ───────────────────────────────────────────────────────────────────
-# Reads connection details from environment variables.
-# Override in development.py / production.py if needed.
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='3306'),
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-            # Enforce strict SQL mode — prevents silent data truncation.
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
-        'CONN_MAX_AGE': 60,
-    }
-}
+# DATABASES is NOT defined here.
+#
+# Each environment settings file is responsible for its own database block:
+#
+#   development.py → MySQL  via DB_NAME / DB_USER / DB_PASSWORD / DB_HOST / DB_PORT
+#   production.py  → MySQL  via DB_NAME / DB_USER / DB_PASSWORD / DB_HOST / DB_PORT
+#   staging.py     → PostgreSQL via DATABASE_URL (injected automatically by Render)
+#
+# Defining DATABASES in base.py would force all three environments to supply
+# MySQL variables at import time, which breaks staging where only DATABASE_URL
+# is available.  Moving the definition to each child settings file keeps the
+# variable requirements scoped to the environment that actually needs them.
 
 
 # ── Password Validation ────────────────────────────────────────────────────────
