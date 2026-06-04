@@ -1,0 +1,28 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.section {
+  @include section-padding;
+  background-color: $color-surface-alt;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-12;
+
+  @include respond-to('lg') {
+    grid-template-columns: 280px 1fr;
+    gap: $space-16;
+    align-items: start;
+  }
+}
+
+.left {
+  @include respond-to('lg') {
+    position: sticky;
+    top: calc($navbar-height + $space-8);
+  }
+}
+
+.right { min-width: 0; }
