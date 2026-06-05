@@ -7,14 +7,8 @@
 }
 
 .header {
-  @include flex-between;
-  flex-wrap: wrap;
-  gap: $space-6;
   margin-bottom: $space-10;
-  align-items: flex-end;
 }
-
-.headerAction { flex-shrink: 0; }
 
 .grid {
   display: grid;

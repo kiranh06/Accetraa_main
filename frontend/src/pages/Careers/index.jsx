@@ -42,7 +42,6 @@ const Careers = () => (
         heading="Don't wait for a job posting"
         description="The best hires come through direct introductions. Reach out now, tell us about yourself, and we'll be in touch when the right opportunity arises."
         primaryAction={{ label: 'Get in Touch', href: ROUTES.CONTACT }}
-        secondaryAction={{ label: 'View Our Work', href: ROUTES.PORTFOLIO }}
         variant="dark"
         align="split"
       />

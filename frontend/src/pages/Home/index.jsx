@@ -5,7 +5,6 @@ import HeroSection from './sections/HeroSection';
 import CompanyOverview from './sections/CompanyOverview';
 import ServicesPreview from './sections/ServicesPreview';
 import ProductsPreview from './sections/ProductsPreview';
-import PortfolioHighlights from './sections/PortfolioHighlights';
 import WhyChooseUs from './sections/WhyChooseUs';
 import TestimonialsSection from './sections/TestimonialsSection';
 
@@ -21,7 +20,6 @@ const Home = () => (
       <CompanyOverview />
       <ServicesPreview />
       <ProductsPreview />
-      <PortfolioHighlights />
       <WhyChooseUs />
       <TestimonialsSection />
       <CTABanner
@@ -29,7 +27,6 @@ const Home = () => (
         heading="Ready to accelerate your digital future?"
         description="Book a free consultation with our experts and discover how Accetraa can transform your business."
         primaryAction={{ label: 'Book Consultation', href: ROUTES.CONTACT }}
-        secondaryAction={{ label: 'View Our Work', href: ROUTES.PORTFOLIO }}
         variant="dark"
         align="split"
       />

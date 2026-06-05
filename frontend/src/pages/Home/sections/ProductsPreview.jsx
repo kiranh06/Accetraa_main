@@ -1,11 +1,9 @@
-import { Link } from 'react-router-dom';
 import useFetch from '@/hooks/useFetch';
 import { getProducts } from '@/services/products';
 import { ProductCard } from '@/components/ui/Card';
 import { SkeletonCard } from '@/components/ui/Skeleton';
 import SectionHeader from '@/components/shared/SectionHeader';
 import Button from '@/components/ui/Button';
-import { ROUTES } from '@/utils/constants';
 import { asString, toStringArray } from '@/utils/formatters';
 import styles from './ProductsPreview.module.scss';
 
@@ -29,19 +27,13 @@ const ProductsPreview = () => {
   return (
     <section className={styles.section} aria-label="Our Products">
       <div className="container">
-        <div className={styles.header}>
-          <SectionHeader
-            eyebrow="Our Products"
-            title="Technology products built for enterprise"
-            subtitle="Purpose-built software platforms solving real operational challenges for modern enterprises."
-            align="left"
-          />
-          <div className={styles.headerAction}>
-            <Button as={Link} to={ROUTES.PORTFOLIO} variant="outline" size="md">
-              All Products →
-            </Button>
-          </div>
-        </div>
+        <SectionHeader
+          eyebrow="Our Products"
+          title="Technology products built for enterprise"
+          subtitle="Purpose-built software platforms solving real operational challenges for modern enterprises."
+          align="left"
+          className={styles.header}
+        />
 
         {loading && <SkeletonGrid />}
 
@@ -64,7 +56,6 @@ const ProductsPreview = () => {
                 title={asString(product.name ?? product.title)}
                 description={asString(product.description)}
                 features={toStringArray(product.features ?? product.highlights)}
-                href={ROUTES.PORTFOLIO}
               />
             ))}
           </div>

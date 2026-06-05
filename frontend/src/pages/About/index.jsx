@@ -46,7 +46,6 @@ const About = () => (
         heading="Ready to partner with a team that takes ownership?"
         description="Schedule a consultation with our leadership team. No sales pitch — just an honest conversation about how we can help you achieve your goals."
         primaryAction={{ label: 'Book Consultation', href: ROUTES.CONTACT }}
-        secondaryAction={{ label: 'View Our Work', href: ROUTES.PORTFOLIO }}
         variant="dark"
         align="split"
       />
