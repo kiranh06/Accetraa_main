@@ -13,8 +13,8 @@ const StagingNotice = () => (
     <h3 className={styles.stagingTitle}>Consultation booking temporarily unavailable</h3>
     <p className={styles.stagingBody}>
       This site is currently in internal review. To request a consultation, please email{' '}
-      <a href="mailto:contact@accetraa.com" className={styles.stagingLink}>
-        contact@accetraa.com
+      <a href="mailto:businessaccetraacompany@gmail.com" className={styles.stagingLink}>
+        businessaccetraacompany@gmail.com
       </a>
       {' '}with the subject line <strong>"Consultation Request"</strong>.
       We will respond within one business day.
